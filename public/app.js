@@ -13,7 +13,7 @@ $(document).ready(function() {
 $.getJSON("/articles", function(data) {
     for (var i = 0; i < 25; i++) {
         $("#articles").append(
-            "<h3>" + data[i].title + "</h3>" + "<p id='date'>" + data[i].date + "</p>" + "<span class='brief'>" + data[i].brief + "<span id='more'><a href='http://www.chicagotribune.com" + data[i].link + "' target='_blank'>" + " Read more</span></span></a><button data-id='" + data[i]._id + "'id='saveButton'>Save article</button>");
+            "<h3>" + data[i].title + "</h3>" + "<p id='date'>" + data[i].date + "</p>" + "<span class='brief'>" + data[i].brief + "<span id='more'><a href='http://www.chicagotribune.com" + data[i].link + "' target='_blank'>" + " Read more</span></span></a><div data-id='" + data[i]._id + "'id='saveButton'>Save article</div>");
     }
 });
 
@@ -22,7 +22,7 @@ $.getJSON("/articles", function(data) {
     for (var i = 0; i < 25; i++) {
         if (data[i].saved == true) {
           $("#savedArticles").append(
-            "<h3>" + data[i].title + "</h3>" + "<p id='date'>" + data[i].date + "</p>" + "<span class='brief'>" + data[i].brief + "<span id='more'><a href='http://www.chicagotribune.com" + data[i].link + "' target='_blank'>" + " Read more</span></span></a><button data-id='" + data[i]._id + "'id='unsaveButton'>Remove Article</button><button data-id='" + data[i]._id + "'id='addNote'>Article note</button>");
+            "<h3>" + data[i].title + "</h3>" + "<p id='date'>" + data[i].date + "</p>" + "<span class='brief'>" + data[i].brief + "<span id='more'><a href='http://www.chicagotribune.com" + data[i].link + "' target='_blank'>" + " Read more</span></span></a><div data-id='" + data[i]._id + "'id='unsaveButton'>Remove Article</div><div data-id='" + data[i]._id + "'id='addNote'>Article note</div>");
         }
     }
 });
@@ -65,7 +65,6 @@ $(document).on("click", "#unsaveButton", function() {
 // Add an article note
 $(document).on("click", "#addNote", function() {
   var thisId = $(this).attr("data-id");
-  console.log(thisId);
   // REWRITE INTO JQUERY
   // var modal = $("#myModal")
   var modal = document.getElementById('myModal');
