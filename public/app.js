@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 // Grab 20 articles to format and display on /news
 $.getJSON("/articles", function(data) {
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 25; i++) {
         $("#articles").append(
             "<h3>" + data[i].title + "</h3>" + "<p id='date'>" + data[i].date + "</p>" + "<span class='brief'>" + data[i].brief + "<span id='more'><a href='http://www.chicagotribune.com" + data[i].link + "' target='_blank'>" + " Read more</span></span></a><button data-id='" + data[i]._id + "'id='saveButton'>Save article</button>");
     }
@@ -19,7 +19,7 @@ $.getJSON("/articles", function(data) {
 
 // Grab up to 20 articles that are "saved" to format and display on /saved
 $.getJSON("/articles", function(data) {
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 25; i++) {
         if (data[i].saved == true) {
           $("#savedArticles").append(
             "<h3>" + data[i].title + "</h3>" + "<p id='date'>" + data[i].date + "</p>" + "<span class='brief'>" + data[i].brief + "<span id='more'><a href='http://www.chicagotribune.com" + data[i].link + "' target='_blank'>" + " Read more</span></span></a><button data-id='" + data[i]._id + "'id='unsaveButton'>Remove Article</button><button data-id='" + data[i]._id + "'id='addNote'>Article note</button>");
