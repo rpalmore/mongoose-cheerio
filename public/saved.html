@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Chicago Breaking News</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One|Roboto:300" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+        Chicago Breaking News
+      </div>
+      <div id="navigation">
+        <div class="links"><a id="home" href="/">Home</a></div>
+        <div class="links"><a id="scrape" href="/scrape">New Articles</a></div>
+        <div class="links"><a id="saved" href="/saved">Saved Articles</a></div>
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="savedArticles">
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="articleTitle"></h2>
+        <h3 id="noteTitle"></h3>
+        <p id="articleNote"></p>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

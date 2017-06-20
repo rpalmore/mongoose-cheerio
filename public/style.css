@@ -1,0 +1,212 @@
+body { 
+/*  background-color: #F2F6D0;*/
+  background-image: url("chicago.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  }
+
+#welcomeHeader {
+  text-align: center;
+}
+
+#header, #welcomeHeader {
+  width: 100%;
+  line-height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #d90f00;
+  z-index: 100;
+}
+
+.links {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#navigation {
+  float: right;
+  background-color: #e17925;
+  border-left: 3px solid #d90f00;
+}
+
+#logo {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Faster One', cursive;
+  font-size: 36px;
+  line-height: 40px;
+}
+
+.links:hover {
+  background-color: #d90f00;
+}
+
+#home {
+  text-decoration: none;
+  color: #ffffff;
+  padding-left: 12px;
+  padding-right: 7px;
+}
+
+#scrape, #saved {
+  text-decoration: none;
+  color: #ffffff;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+h1 {
+  margin-left: 30px;
+}
+
+#welcomeBox {
+  margin-top: 100px;
+  width: 400px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  opacity: 0.9;
+  border: 1px solid #e17925;
+  animation: bounce 3s 3 alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+#welcomeText {
+  text-align: center;
+  line-height: 30px;
+}
+
+.welcomeButtons {
+  background-color: #e17925;
+  color: #ffffff;
+}
+
+#welcomeScrape {
+  color: #ffffff;
+}
+      
+#wrapper {
+  margin-top: 90px;
+  margin-bottom: 30px;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: #ffffff;
+  opacity: 0.95;
+}
+
+#articles, #savedArticles {
+  display: inline-block;
+  overflow: auto;
+  width: 90%;
+  height: 700px;
+  margin-left: 30px;
+  padding-right: 30px;
+}
+
+#date {
+  font-style: italic;
+  color: #9a97a4;
+  font-size: 14px;
+}
+
+.brief {
+  width: 70%;
+  padding-right: 20px;
+  display: inline-block;
+}
+
+#more {
+  font-style: italic;
+  color: #cccccc;
+} 
+
+a {
+  text-decoration: none;
+}
+
+#saveButton, #addNote, #unsaveButton {
+  float: right;
+  padding-top: 15px;
+}
+
+/*////////== MODAL ==////////*/
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/*#notes {
+  float: right;
+  width: 30%;
+}*/
+
+
+      textarea, input {
+        display: block;
+        width: 100%;
+        background-color: #FCF5C7;
+      }
+      input {
+        height: 36px;
+        font-size: 24px;
+      }
+      textarea {
+        height: 200px;
+        font-size: 18px;
+      }
