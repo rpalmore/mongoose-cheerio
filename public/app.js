@@ -12,8 +12,16 @@ $(document).ready(function() {
 // Grab 20 articles to format and display on /news
 $.getJSON("/articles", function(data) {
     for (var i = 0; i < 25; i++) {
+      var date = data[i].date;
+      // ENHANCEMENT for date display
+      // append today's date if there is only a hh:mm display?
+      // example
+      // console.log(date.charAt(0));
+      // if (date.charAt(0) !== ("[JFMASOND]")) {
+      //   // do something
+      // }
         $("#articles").append(
-            "<h3>" + data[i].title + "</h3>" + "<p id='date'>" + data[i].date + "</p>" + "<span class='brief'>" + data[i].brief + "<span id='more'><a href='http://www.chicagotribune.com" + data[i].link + "' target='_blank'>" + " Read more</span></span></a><div data-id='" + data[i]._id + "'id='saveButton'>Save article</div>");
+            "<h3>" + data[i].title + "</h3>" + "<p id='date'>" + date + "</p>" + "<span class='brief'>" + data[i].brief + "<span id='more'><a href='http://www.chicagotribune.com" + data[i].link + "' target='_blank'>" + " Read more</span></span></a><div data-id='" + data[i]._id + "'id='saveButton'>Save article</div>");
     }
 });
 
@@ -60,12 +68,13 @@ $(document).on("click", "#unsaveButton", function() {
   });
 });
 
+// ENHANCEMENT
 // Add feature to write "No saved articles" to div if div is empty
 
 // Add an article note
 $(document).on("click", "#addNote", function() {
   var thisId = $(this).attr("data-id");
-  // REWRITE INTO JQUERY
+  // TO DO: REWRITE INTO JQUERY
   // var modal = $("#myModal")
   var modal = document.getElementById('myModal');
   modal.style.display = "block";
@@ -90,25 +99,15 @@ window.onclick = function(event) {
     // With that done, add the note information to the page
     .done(function(data) {
       console.log(data);
-      // The title of the article
-      // if($("#articleTitle").length < 0) {
-      //   $("#articleTitle").append(data.title);
-      // }
       $("#articleTitle").append("<h2>" + data.title + "</h2>");
-
-      // An input to enter a new title
       $("#noteTitle").append("<input id='titleinput' name='title' >");
-      // A textarea to add a new note body
       $("#articleNote").append("<textarea id='bodyinput' name='body'></textarea>");
-      // A button to submit a new note, with the id of the article saved to it
       $("#articleNote").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
       $("#articleNote").append("<button data-id='" + data._id + "' id='deletenote'>Delete Note</button>");
 
       // If there's a note in the article
       if (data.note) {
-        // Place the title of the note in the title input
         $("#titleinput").val(data.note.title);
-        // Place the body of the note in the body textarea
         $("#bodyinput").val(data.note.body);
       }
     });
@@ -116,7 +115,6 @@ window.onclick = function(event) {
 
 // When you click the savenote button
 $(document).on("click", "#savenote", function() {
-  // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
   location.reload();
 
