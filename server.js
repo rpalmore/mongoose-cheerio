@@ -18,6 +18,8 @@ var path = require("path")
 var Note = require("./models/Note.js");
 var Article = require("./models/Article.js");
 
+var PORT = process.env.PORT || 3000;
+
 // Sets up the Express App
 // =============================================================|
 var app = express();
@@ -29,10 +31,13 @@ app.use(bodyParser.urlencoded({
 // =============================================================|
 app.use(express.static("public"));
 
-// Database configuration with mongoose
+// Database configuration with mongoose, mLab
 // =============================================================|
-mongoose.connect("mongodb://localhost/newsFeed");
+mongoose.connect("mongodb://heroku_c4b6sfln:aa8kml5q06bqkn2hpqc4ovis95@ds131512.mlab.com:31512/heroku_c4b6sfln");
 var db = mongoose.connection;
+
+// Dev connection
+// mongoose.connect("mongodb://localhost/newsFeed");
 
 db.on("error", function(error) {
   console.log("Mongoose Error: ", error);
