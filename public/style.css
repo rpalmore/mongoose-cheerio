@@ -147,11 +147,15 @@ body {
 
 #more {
   font-style: italic;
-  color: #cccccc;
 } 
 
 a {
   text-decoration: none;
+  color: #4d6e9d
+}
+
+a:hover {
+  color: #d90f00;
 }
 
 #saveButton, #addNote, #unsaveButton {
