@@ -15,7 +15,7 @@ $.getJSON("/articles", function(data) {
       var date = data[i].date;
       // ENHANCEMENT for date display
       // append today's date if there is only a hh:mm display?
-      // example
+      //// example
       // console.log(date.charAt(0));
       // if (date.charAt(0) !== ("[JFMASOND]")) {
       //   // do something
@@ -99,11 +99,11 @@ window.onclick = function(event) {
     // With that done, add the note information to the page
     .done(function(data) {
       console.log(data);
-      $("#articleTitle").append("<h2>" + data.title + "</h2>");
+      $("#articleTitle").append("<h3>" + data.title + "</h3>");
       $("#noteTitle").append("<input id='titleinput' name='title' >");
       $("#articleNote").append("<textarea id='bodyinput' name='body'></textarea>");
-      $("#articleNote").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
-      $("#articleNote").append("<button data-id='" + data._id + "' id='deletenote'>Delete Note</button>");
+      $("#articleNote").append("<div data-id='" + data._id + "' id='savenote'>Save Note</div>");
+      $("#articleNote").append("<div data-id='" + data._id + "' id='deletenote'>Delete Note</div>");
 
       // If there's a note in the article
       if (data.note) {
@@ -137,10 +137,8 @@ $(document).on("click", "#savenote", function() {
 
 // When you click the deletenote button
 $(document).on("click", "#deletenote", function() {
-  // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
   location.reload();
-
   // Run a POST request to "delete" the note, by clearing the input fields.
   $.ajax({
     method: "POST",

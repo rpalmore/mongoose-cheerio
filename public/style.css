@@ -9,10 +9,6 @@ body {
 /*/////////////==WELCOME SCREEN==/////////////*/
 /*/==========================================/*/
 
-/*h1 {
-  margin-left: 30px;
-}*/
-
 #welcomeBox {
   margin-top: 100px;
   width: 400px;
@@ -22,7 +18,8 @@ body {
   background-color: #ffffff;
   opacity: 0.9;
   border: 1px solid #e17925;
-  animation: bounce 3s 3 alternate;
+  border: 5px solid #fcce87;
+  animation: bounce 3s infinite alternate;
 }
 
 @keyframes bounce {
@@ -43,7 +40,7 @@ body {
   background-color: #e17925;
   color: #ffffff;
   display: inline-block;
-  border: 1px solid #e17925;
+  border: 2px solid #fcce87;
 }
 
 .welcomeButtons:hover {
@@ -89,7 +86,7 @@ body {
   width: 400px;
 }
 
-.links {
+.links, .newsLink {
   font-size: 18px;
   display: inline-block;
   width: 30%;
@@ -97,6 +94,13 @@ body {
 
 .links:hover {
   background-color: #d90f00;
+}
+
+.newsLink:hover {
+  background-color: #f9ae46;
+  color: #000000;
+  border-right: 1px solid #d90f00;
+  border-left: 1px solid #d90f00;
 }
 
 #home, #scrape, #saved {
@@ -193,7 +197,7 @@ a {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 3px solid #fcce87;
     width: 80%;
 }
 
@@ -212,16 +216,50 @@ a {
     cursor: pointer;
 }
 
-      textarea, input {
-        display: block;
-        width: 100%;
-        background-color: #FCF5C7;
-      }
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-      textarea {
-        height: 200px;
-        font-size: 18px;
-      }
+textarea, input {
+  display: block;
+  width: 100%;
+  background-color: #eeeeee;
+}
+      
+input {
+  height: 36px;
+  font-size: 24px;
+}
+
+textarea {
+  height: 200px;
+  font-size: 18px;
+}
+
+#savenote, #deletenote {
+  background-color: #e17925;
+  color: #ffffff;
+  padding: 6px;
+  border: 1px solid #e17925;
+}
+
+#savenote, #deletenote {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  margin-top: 5px;
+  text-align: center;
+}
+
+#deletenote {
+  background-color: #fcce87;
+  color: #000000;
+}
+
+#savenote:hover {
+  background-color: #d90f00;
+  
+}
+
+#deletenote:hover {
+  background-color: #d90f00;
+  color: #ffffff;
+}
+
+/*////////////////////////////////
