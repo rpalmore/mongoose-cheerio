@@ -42,10 +42,17 @@ body {
 .welcomeButtons {
   background-color: #e17925;
   color: #ffffff;
+  display: inline-block;
+  border: 1px solid #e17925;
+}
+
+.welcomeButtons:hover {
+  background-color: #d90f00;
 }
 
 #welcomeScrape {
   color: #ffffff;
+  padding: 6px;
 }
 
 /*///////////////==HEADER==///////////////////*/
