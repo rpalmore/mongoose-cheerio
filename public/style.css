@@ -17,7 +17,6 @@ body {
   margin-right: auto;
   background-color: #ffffff;
   opacity: 0.9;
-  border: 1px solid #e17925;
   border: 5px solid #fcce87;
   animation: bounce 3s infinite alternate;
 }
@@ -121,6 +120,7 @@ body {
   padding-top: 2%;
   padding-bottom: 2%;
   background-color: #ffffff;
+  border: 3px solid #fcce87;
   opacity: 0.95;
 }
 
