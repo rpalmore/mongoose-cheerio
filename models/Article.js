@@ -10,7 +10,7 @@ var ArticleSchema = new Schema({
     type: String,
     required: true
   },
-    date: {
+  date: {
     type: String,
     required: true
   },
@@ -20,10 +20,9 @@ var ArticleSchema = new Schema({
   },
   link: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
-    saved: {
+  saved: {
     type: Boolean,
     default: false
   },

@@ -11,17 +11,18 @@ $(document).ready(function() {
 
 // Grab 20 articles to format and display on /news
 $.getJSON("/articles", function(data) {
-    for (var i = 0; i < 25; i++) {
-      var date = data[i].date;
+    for (var i = 0; i < 5; i++) {
+      // var date = data[i].date;
       // ENHANCEMENT for date display
       // append today's date if there is only a hh:mm display?
       //// example
       // console.log(date.charAt(0));
       // if (date.charAt(0) !== ("[JFMASOND]")) {
-      //   // do something
+      //   console.log("Hey!");
+      //   $("#date").addClass("rebecca");
       // }
         $("#articles").append(
-            "<h3>" + data[i].title + "</h3>" + "<p id='date'>" + date + "</p>" + "<span class='brief'>" + data[i].brief + "<span id='more'><a href='http://www.chicagotribune.com" + data[i].link + "' target='_blank'>" + " Read more</span></span></a><div data-id='" + data[i]._id + "'id='saveButton'>Save article</div>");
+            "<h3>" + data[i].title + "</h3>" + "<p id='date'>" + data[i].date + "</p>" + "<span class='brief'>" + data[i].brief + "<span id='more'><a href='http://www.chicagotribune.com" + data[i].link + "' target='_blank'>" + " Read more</span></span></a><div data-id='" + data[i]._id + "'id='saveButton'>Save article</div>");
     }
 });
 
@@ -34,6 +35,16 @@ $.getJSON("/articles", function(data) {
         }
     }
 });
+
+// ENHANCEMENT
+// Add feature to write "No saved articles" to div if div is empty
+// function checkArticles() {
+//     if ($('#savedArticles').is(':empty')) {
+//         alert("No saved articles!");
+//         console.log("No saved articles!");
+//     }
+// }
+// checkArticles();
 
 // When user clicks "save article" button, boolean value changes
 $(document).on("click", "#saveButton", function() {
@@ -67,9 +78,6 @@ $(document).on("click", "#unsaveButton", function() {
       location.reload();
   });
 });
-
-// ENHANCEMENT
-// Add feature to write "No saved articles" to div if div is empty
 
 // Add an article note
 $(document).on("click", "#addNote", function() {
